@@ -69,7 +69,10 @@ int main() {
 
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 	
-	printf(TEXT_COLOR_GREEN "WINDOW CREATE SUCCESS" TEXT_COLOR_RESET);
+	printf(TEXT_COLOR_GREEN "WINDOW CREATE SUCCESS\n" TEXT_COLOR_RESET);
+	int nrAttributes;
+	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+	printf("Max Vertex Attributes: %d\n", nrAttributes);
 
 	// VBO
 
@@ -171,5 +174,5 @@ int main() {
 	}
 
 	glfwTerminate();
-	return 0;
+	return 0x0;
 }

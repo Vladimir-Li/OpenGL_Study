@@ -1,0 +1,16 @@
+#ifndef TEXT_COLOR_H
+#define TEXT_COLOR_H
+
+#define TEXT_COLOR_RESET	"\033[0m"
+#define TEXT_COLOR_BLACK	"\033[30m"
+#define TEXT_COLOR_RED		"\033[31m"
+#define TEXT_COLOR_GREEN	"\033[32m"
+#define TEXT_COLOR_YELLOW	"\033[33m"
+#define TEXT_COLOR_BLUE		"\033[34m"
+#define TEXT_COLOR_MAGNETA	"\033[35m"
+#define TEXT_COLOR_CYAN		"\033[36m"
+#define TEXT_COLOR_WHITE	"\033[37m"
+
+#endif // TEXT_COLOR_H
+
+

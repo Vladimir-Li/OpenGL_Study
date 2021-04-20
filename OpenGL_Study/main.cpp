@@ -73,6 +73,9 @@ int main() {
 	// Texture 
 	Texture texture1("container.jpg", Texture::JPG, Texture::REPEAT, Texture::LINEAR);
 	Texture texture2("awesomeface.png", Texture::PNG, Texture::REPEAT, Texture::LINEAR);
+
+	/*-------------------Old Way to Load Texture-------------------*/
+
 	//unsigned int texture1, texture2;
 	//glGenTextures(1, &texture1);
 	//glBindTexture(GL_TEXTURE_2D, texture1);
@@ -113,6 +116,9 @@ int main() {
 	//	fprintf(stderr, TEXT_COLOR_RED "Failed to Load Texture2" TEXT_COLOR_RESET);
 	//}
 	//stbi_image_free(data);
+	
+	/*-------------------Old Way to Load Texture-------------------*/
+
 	// VAO&VBO
 	unsigned int VBO, VAO;
 	glGenBuffers(1, &VBO);

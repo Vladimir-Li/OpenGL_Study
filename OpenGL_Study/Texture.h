@@ -22,6 +22,7 @@ class Texture {
 public:
 	unsigned int ID;
 	int width, height, nrChannels;
+
 	enum type{
 		PNG,
 		JPG
@@ -36,6 +37,7 @@ public:
 		NEAREST,
 		LINEAR
 	};
+
 	Texture(const char* file, type fileType, wrapping wrapType, filter filterType) {
 		// Init
 		glGenTextures(1, &ID);
@@ -90,6 +92,10 @@ public:
 			fprintf(stderr, TEXT_COLOR_RED "Failed to Load Texture" TEXT_COLOR_RESET);
 		}
 		
+	}
+
+	void setUniform(const std::string& name, int value) const {
+		glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
 	}
 
 private:

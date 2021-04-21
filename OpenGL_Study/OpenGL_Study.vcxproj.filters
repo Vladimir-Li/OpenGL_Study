@@ -13,6 +13,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="资源文件\参考资料">
+      <UniqueIdentifier>{c694edcd-14fe-4884-ac42-43f995d6cbf2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -43,6 +46,13 @@
     <None Include="FragmentShader.glsl">
       <Filter>src</Filter>
     </None>
+    <None Include="README.md" />
+    <None Include="opengl46-quick-reference-card.pdf">
+      <Filter>资源文件\参考资料</Filter>
+    </None>
+    <None Include="glspec46.core.pdf">
+      <Filter>资源文件\参考资料</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="wall.jpg">
@@ -52,6 +62,9 @@
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="container.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="opengl.jpg">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

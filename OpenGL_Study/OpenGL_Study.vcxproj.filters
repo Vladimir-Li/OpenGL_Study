@@ -32,6 +32,9 @@
     <ClInclude Include="Texture.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="VertexShader.glsl">

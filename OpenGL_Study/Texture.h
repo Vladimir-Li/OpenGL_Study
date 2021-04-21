@@ -1,4 +1,9 @@
-#pragma once
+#ifndef TEXTURE_H
+#define TEXTURE_H
+
+#include <stack>
+#include <string>
+#include <iostream>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -24,6 +29,7 @@ public:
 	int width, height, nrChannels;
 
 	enum type{
+		UNKNOWN,
 		PNG,
 		JPG
 	};
@@ -38,10 +44,12 @@ public:
 		LINEAR
 	};
 
-	Texture(const char* file, type fileType, wrapping wrapType, filter filterType) {
+	Texture(const char* file, wrapping wrapType, filter filterType) {
 		// Init
 		glGenTextures(1, &ID);
 		glBindTexture(GL_TEXTURE_2D, ID);
+		// Parse file name
+		type fileType = parseFileName((char*)file);
 		// Settings
 		switch (wrapType)
 		{
@@ -80,6 +88,8 @@ public:
 		if (data) {
 			switch (fileType)
 			{
+			case Texture::UNKNOWN:
+				fprintf(stderr, TEXT_COLOR_RED "Unknown Texture File Type" TEXT_COLOR_RESET);
 			case Texture::PNG:
 				Tsetting(GL_RGBA);
 				break;
@@ -100,4 +110,38 @@ public:
 
 private:
 	// TODO: file name parsing find RGBA or RGB
+	type parseFileName(char* str) {
+		// Parse a char* from back and push is onto the stack until reach a '.'
+		// After that pop it into a new str
+		char* ptr = str + strlen(str) - 1;
+		char c = *ptr;
+		std::stack<char> s;
+		
+		// Read from back until reach a '.' and push them into the stack
+		while (c != '.') {
+			s.push(c);
+			ptr--;
+			c = *ptr;
+		}
+		// Pop all elements out of the stack into the new string
+		char* t = (char*)malloc(sizeof(char)*8);
+		int i = 0;
+		while (!s.empty()) {
+			t[i] = s.top();
+			s.pop();
+			i++;
+		}
+		t[i] = '\0';
+		// Compare the new string
+		if (strcmp(t, "png") == 0) {
+			std::cout << t << std::endl;
+			return PNG;
+		}
+		else if (strcmp(t, "jpg") == 0) {
+			std::cout << t << std::endl;
+			return JPG;
+		}
+		return UNKNOWN;
+	}
 };
+#endif

@@ -71,8 +71,8 @@ int main() {
 	Shader shader("VertexShader.glsl", "FragmentShader.glsl");
 
 	// Texture 
-	Texture texture1("container.jpg", Texture::JPG, Texture::REPEAT, Texture::LINEAR);
-	Texture texture2("awesomeface.png", Texture::PNG, Texture::REPEAT, Texture::LINEAR);
+	Texture texture1("container.jpg", Texture::REPEAT, Texture::LINEAR);
+	Texture texture2("awesomeface.png", Texture::REPEAT, Texture::LINEAR);
 
 	/*-------------------Old Way to Load Texture-------------------*/
 

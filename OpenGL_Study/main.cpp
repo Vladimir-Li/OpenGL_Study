@@ -10,6 +10,7 @@
 #include "TextColor.h"
 #include "Shader.h"
 #include "Texture.h"
+#include "mat4x4.hpp"
 
 /*
 OpenGL Study
@@ -35,6 +36,7 @@ unsigned int indices[] = {
 };
 
 int main() {
+	 
 	if (!glfwInit()) {
 		fprintf(stderr, "Failed to Initialize GLFW\n");
 		return -1;
@@ -127,7 +129,7 @@ int main() {
 	unsigned int EBO;
 	glGenBuffers(1, &EBO);
 
-	/* Initializing Triangle */
+	/*--------------------Initializing Triangle--------------------*/
 	//1. bind vao
 	glBindVertexArray(VAO);
 	//2. copy vertex into vertex buffer
